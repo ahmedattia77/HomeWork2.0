@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.homework20.HomeFragment"
+        android:name="com.example.homework20.ui.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.example.homework20.DetailsFragment"
+        android:name="com.example.homework20.ui.DetailsFragment"
         android:label="fragment_details"
         tools:layout="@layout/fragment_details" >
 
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.homework20.LoginFragment"
+        android:name="com.example.homework20.ui.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -46,7 +46,7 @@
     </fragment>
     <fragment
         android:id="@+id/singUpFragment"
-        android:name="com.example.homework20.SingUpFragment"
+        android:name="com.example.homework20.ui.SingUpFragment"
         android:label="fragment_sing_up"
         tools:layout="@layout/fragment_sing_up" >
 
@@ -59,7 +59,7 @@
     </fragment>
     <fragment
         android:id="@+id/getStartFragment"
-        android:name="com.example.homework20.GetStartFragment"
+        android:name="com.example.homework20.ui.GetStartFragment"
         android:label="fragment_get_start"
         tools:layout="@layout/fragment_get_start" >
         <action

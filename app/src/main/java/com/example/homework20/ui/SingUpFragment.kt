@@ -1,16 +1,13 @@
-package com.example.homework20
-
-
+package com.example.homework20.ui
 import android.os.Bundle
 import android.widget.Toast
-import com.example.BaseFragment
 import com.example.homework20.databinding.FragmentSingUpBinding
 import com.example.homework20.models.Login
 import java.util.regex.Pattern
 
 
 class SingUpFragment
-    : BaseFragment<FragmentSingUpBinding> (FragmentSingUpBinding::inflate) {
+    : BaseFragment<FragmentSingUpBinding>(FragmentSingUpBinding::inflate) {
 
     private lateinit var loginAu: Login
 
@@ -44,10 +41,10 @@ class SingUpFragment
     }
 
     private fun checkFields(): Boolean {
-        var phone = binding.phoneNumberEt.text.toString()
-        var city = binding.cityEt.text.toString()
-        var email = binding.emailEt.text.toString()
-        var password = binding.passwordEt.text.toString()
+        val phone = binding.phoneNumberEt.text.toString()
+        val city = binding.cityEt.text.toString()
+        val email = binding.emailEt.text.toString()
+        val password = binding.passwordEt.text.toString()
 
         if (phone.isEmpty() || phone.length < 11){
             "PLS Enter Valid Phone Number".toast(requireContext())

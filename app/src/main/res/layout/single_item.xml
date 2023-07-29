@@ -7,24 +7,16 @@
     android:foreground="?android:attr/selectableItemBackground"
     >
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:cardCornerRadius="24dp"
-        app:cardElevation="24dp"
-        >
-
-        <ImageView
-            android:id="@+id/image"
-            android:layout_width="210dp"
-            android:layout_height="177dp"
-            android:adjustViewBounds="true"
-            android:src="@drawable/picture_1"
-            />
-    </androidx.cardview.widget.CardView>
+    <com.makeramen.roundedimageview.RoundedImageView
+       android:id="@+id/image"
+       android:layout_width="210dp"
+       android:layout_height="177dp"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       android:adjustViewBounds="true"
+       app:riv_corner_radius="20dp"
+       android:src="@drawable/picture_1"
+    />
 
     <TextView
         android:id="@+id/title_"
@@ -33,7 +25,8 @@
         android:fontFamily="@font/montserrat_semibold"
         android:textColor="@color/Text2"
         android:textSize="17sp"
-        app:layout_constraintStart_toEndOf="@+id/card_image"
+        android:elevation="12dp"
+        app:layout_constraintStart_toEndOf="@+id/image"
         app:layout_constraintBottom_toTopOf="@+id/review"
         android:layout_marginStart="16dp"
         />
@@ -45,9 +38,9 @@
         android:fontFamily="@font/montserrat"
         android:textColor="@color/textC"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/card_image"
+        app:layout_constraintBottom_toBottomOf="@+id/image"
         app:layout_constraintEnd_toEndOf="@+id/title_"
         app:layout_constraintStart_toStartOf="@+id/title_"
-        app:layout_constraintTop_toTopOf="@+id/card_image" />
+        app:layout_constraintTop_toTopOf="@+id/image" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

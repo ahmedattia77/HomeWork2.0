@@ -1,5 +1,5 @@
-package com.example.homework20
-import com.example.BaseFragment
+package com.example.homework20.ui
+
 import com.example.homework20.databinding.FragmentGetStartBinding
 
 
@@ -8,7 +8,6 @@ class GetStartFragment :
 
 
     override fun setUp() {
-        "Login successfully".toast(requireContext())
         callBack()
     }
 

@@ -1,6 +1,7 @@
-package com.example.homework20
+package com.example.homework20.ui
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.addCallback
-import com.example.BaseFragment
+
 import com.example.homework20.adapters.VacationAdapter
 import com.example.homework20.dataBase.DataManager
 import com.example.homework20.databinding.FragmentHomeBinding
@@ -11,15 +12,14 @@ class HomeFragment
     : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate), VacationOnClickListener{
 
 
-
     override fun setUp (){
       setUpRecycle()
       onBackPressed()
     }
 
     fun onBackPressed () {
-        activity?.onBackPressedDispatcher?.addCallback(this) {
-
+        requireActivity().onBackPressedDispatcher.addCallback(this) {
+            requireActivity().finish()
         }
     }
 
@@ -29,8 +29,7 @@ class HomeFragment
     }
 
     override fun onItemClick(CurrentItem: VacationModel) {
-        var action = HomeFragmentDirections.actionHomeFragmentToDetailsFragment(CurrentItem)
-
+        val action = HomeFragmentDirections.actionHomeFragmentToDetailsFragment(CurrentItem)
         navController.navigate(action)
     }
 

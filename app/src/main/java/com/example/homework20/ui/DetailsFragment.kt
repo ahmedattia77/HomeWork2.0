@@ -1,5 +1,5 @@
-package com.example.homework20
-import com.example.BaseFragment
+package com.example.homework20.ui
+
 import com.example.homework20.databinding.FragmentDetailsBinding
 import com.example.homework20.models.VacationModel
 

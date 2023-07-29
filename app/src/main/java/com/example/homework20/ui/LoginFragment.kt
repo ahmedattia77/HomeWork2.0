@@ -1,9 +1,6 @@
-package com.example.homework20
+package com.example.homework20.ui
 import android.content.Context
-import android.os.Bundle
-import android.view.View
-import android.widget.Toast
-import com.example.BaseFragment
+
 import com.example.homework20.databinding.FragmentLoginBinding
 import com.example.homework20.models.Login
 
@@ -12,7 +9,6 @@ class LoginFragment
     : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate) {
 
     private lateinit var loginAu:Login
-
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -24,8 +20,6 @@ class LoginFragment
             val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment2()
             navController.navigate(action)
         }
-
-
     }
 
     override fun setUp() {

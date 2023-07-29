@@ -1,4 +1,4 @@
-package com.example
+package com.example.homework20.ui
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater

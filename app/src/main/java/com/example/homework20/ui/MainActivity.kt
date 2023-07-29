@@ -1,8 +1,9 @@
-package com.example.homework20
+package com.example.homework20.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
+import com.example.homework20.R
 
 
 class MainActivity : AppCompatActivity() {
