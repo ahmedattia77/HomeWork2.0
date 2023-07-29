@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".GetStartFragment">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/rectangle1"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/aspen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/aspen"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="97dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginEnd="63dp"
+        />
+
+    <TextView
+        android:id="@+id/plan_your"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/plan_your"
+        android:textColor="@color/white"
+        android:textSize="27sp"
+        android:fontFamily="@font/montserrat"
+        app:layout_constraintTop_toBottomOf="@+id/aspen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="260dp"
+        />
+
+    <TextView
+        android:id="@+id/lux"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/luxurious_nvacation"
+        android:textColor="@color/white"
+        android:textSize="47sp"
+        android:fontFamily="@font/montserrat"
+        app:layout_constraintTop_toBottomOf="@+id/plan_your"
+        app:layout_constraintStart_toStartOf="@+id/plan_your"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="11dp"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/explore_bt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        app:layout_constraintTop_toBottomOf="@+id/lux"
+        android:layout_marginHorizontal="37dp"
+        android:text="@string/explore"
+        android:textColor="@color/white"
+        android:background="@drawable/rounded_background_bt"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
