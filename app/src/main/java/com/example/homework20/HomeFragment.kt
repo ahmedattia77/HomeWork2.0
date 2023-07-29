@@ -1,6 +1,4 @@
 package com.example.homework20
-import android.os.Bundle
-import android.view.View
 import androidx.activity.addCallback
 import com.example.BaseFragment
 import com.example.homework20.adapters.VacationAdapter
