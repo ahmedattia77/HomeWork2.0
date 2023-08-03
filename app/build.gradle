@@ -55,7 +55,15 @@ dependencies {
 
     //roundedImageView
     implementation 'com.makeramen:roundedimageview:2.3.0'
-    //image shadow
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    //JSON convertor
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+    //
+    implementation("com.github.leandroborgesferreira:loading-button-android:2.3.0")
+
+
+
 
 
 }

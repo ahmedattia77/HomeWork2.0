@@ -1,8 +1,6 @@
 package com.example.homework20.ui
-import androidx.activity.OnBackPressedCallback
 import androidx.activity.addCallback
-
-import com.example.homework20.adapters.VacationAdapter
+import com.example.homework20.ui.adapters.VacationAdapter
 import com.example.homework20.dataBase.DataManager
 import com.example.homework20.databinding.FragmentHomeBinding
 import com.example.homework20.listener.VacationOnClickListener
@@ -30,7 +28,9 @@ class HomeFragment
 
     override fun onItemClick(CurrentItem: VacationModel) {
         val action = HomeFragmentDirections.actionHomeFragmentToDetailsFragment(CurrentItem)
+
         navController.navigate(action)
+
     }
 
 

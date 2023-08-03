@@ -1,4 +1,4 @@
-package com.example.homework20.adapters
+package com.example.homework20.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.View

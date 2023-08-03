@@ -20,27 +20,27 @@ class Login {
     companion object{
         val PREV_NAME : String = "login_preference"
         val IS_LOGIN : String = "isLoggedIn"
-        val KEY_NUMBER:String = "number"
+        val KEY_EMAIL:String = "email"
         val KEY_PASSWORD:String = "password"
     }
 
-    fun addUser (number:String , password:String){
+    fun addUser (email:String , password:String){
 
             editor.putBoolean(IS_LOGIN , false)
-            editor.putString(KEY_NUMBER , number)
+            editor.putString(KEY_EMAIL , email)
             editor.putString(KEY_PASSWORD , password)
             editor.commit()
 
     }
 
     fun isLoggedIn () :Boolean {
-        val number = preferences.getString(KEY_NUMBER , null)
-        if (number != null) return true
+        val email = preferences.getString(KEY_EMAIL , null)
+        if (email != null) return true
         return false
     }
 
     fun userExist(number:String , password:String) : Boolean{
-        if (number == preferences.getString(KEY_NUMBER , null)
+        if (number == preferences.getString(KEY_EMAIL , null)
             && password == preferences.getString(KEY_PASSWORD , null))
                 return true
         return false

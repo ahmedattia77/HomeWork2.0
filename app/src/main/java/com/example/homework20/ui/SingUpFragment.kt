@@ -1,8 +1,11 @@
 package com.example.homework20.ui
 import android.os.Bundle
-import android.widget.Toast
+import android.view.View
+import androidx.fragment.app.viewModels
+import com.example.homework20.R
 import com.example.homework20.databinding.FragmentSingUpBinding
 import com.example.homework20.models.Login
+import com.example.homework20.ui.viewModel.SingUpViewModel
 import java.util.regex.Pattern
 
 
@@ -10,6 +13,10 @@ class SingUpFragment
     : BaseFragment<FragmentSingUpBinding>(FragmentSingUpBinding::inflate) {
 
     private lateinit var loginAu: Login
+    private val viewModel :SingUpViewModel by viewModels()
+    private lateinit var email :String
+    private lateinit var password:String
+    private lateinit var name :String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,17 +24,41 @@ class SingUpFragment
     }
 
     override fun setUp() {
+        observer()
         callBack()
     }
 
+    private fun observer(){
+        viewModel.signUpLiveData.observe(viewLifecycleOwner){
+            it.message.toast(requireContext())
+            loginAu.addUser(binding.emailEt.toString() , binding.passwordEt.toString())
+            navController.navigate(SingUpFragmentDirections.actionSingUpFragmentToGetStartFragment())
+            buttonAni(false)
+            hideUiWed(false)
+        }
 
-    fun callBack (){
+        viewModel.signUpErrorLiveData.observe(viewLifecycleOwner){
+            it.toast(requireContext())
+            buttonAni(false)
+            hideUiWed(false)
+        }
+
+    }
+
+    private fun callBack (){
 
         binding.signBt.setOnClickListener {
             if (checkFields()){
-                loginAu.addUser(binding.phoneNumberEt.toString() , binding.passwordEt.toString())
-                navController.navigate(SingUpFragmentDirections.actionSingUpFragmentToGetStartFragment())
-                Toast.makeText(requireContext() , "signed Up successfully" ,Toast.LENGTH_SHORT).show()
+                if (!loginAu.userExist(binding.emailEt.toString() ,binding.passwordEt.toString())){
+                    email = binding.emailEt.text.toString()
+                    password = binding.passwordEt.text.toString()
+                    name = binding.nameEt.text.toString()
+                    viewModel.singUp(name ,email , password)
+                    buttonAni(true)
+                    hideUiWed(true)
+                }else{
+                    "this user has been sing up already".toast(requireContext())
+                }
             }
         }
 
@@ -41,7 +72,7 @@ class SingUpFragment
     }
 
     private fun checkFields(): Boolean {
-        val phone = binding.phoneNumberEt.text.toString()
+        val phone = binding.nameEt.text.toString()
         val city = binding.cityEt.text.toString()
         val email = binding.emailEt.text.toString()
         val password = binding.passwordEt.text.toString()
@@ -78,5 +109,23 @@ class SingUpFragment
 
         return true
     }
+
+    private fun buttonAni(turn:Boolean){
+        if (turn)
+            binding.signBt.startAnimation()
+        else{
+            binding.signBt.revertAnimation{
+                binding.signBt.setBackgroundResource(R.drawable.rounded_background_bt)
+            }
+        }
+    }
+
+    fun hideUiWed (turn:Boolean){
+        if (turn)
+            binding.linAlready.visibility = View.GONE
+        else
+            binding.linAlready.visibility = View.VISIBLE
+    }
+
 
 }

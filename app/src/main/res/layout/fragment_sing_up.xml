@@ -69,10 +69,10 @@
         />
 
     <TextView
-        android:id="@+id/phone_num"
+        android:id="@+id/name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/phone_number"
+        android:text="@string/name"
         android:textSize="16dp"
         android:includeFontPadding="false"
         android:textColor="@color/black"
@@ -83,18 +83,18 @@
         />
 
     <EditText
-        android:id="@+id/phone_number_et"
+        android:id="@+id/name_et"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="7dp"
-        android:hint="@string/phone_number"
+        android:hint="@string/name"
         android:textSize="16sp"
         android:paddingStart="16dp"
         android:paddingVertical="12dp"
         android:layout_marginEnd="27dp"
-        android:inputType="phone"
+        android:inputType="text"
         app:layout_constraintStart_toStartOf="@id/login"
-        app:layout_constraintTop_toBottomOf="@+id/phone_num"
+        app:layout_constraintTop_toBottomOf="@+id/name"
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@drawable/rounded_background_iv"
         />
@@ -108,7 +108,7 @@
         android:includeFontPadding="false"
         android:textColor="@color/black"
         android:layout_marginTop="17dp"
-        app:layout_constraintTop_toBottomOf="@+id/phone_number_et"
+        app:layout_constraintTop_toBottomOf="@+id/name_et"
         app:layout_constraintStart_toStartOf="@+id/login"
         app:layout_constraintEnd_toEndOf="parent"
         />
@@ -220,7 +220,7 @@
             />
     </LinearLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.github.leandroborgesferreira.loadingbutton.customViews.CircularProgressButton
         android:id="@+id/sign_bt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -237,6 +237,7 @@
         />
 
     <LinearLayout
+        android:id="@+id/lin_already"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
